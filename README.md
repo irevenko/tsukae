@@ -1,2 +1,1 @@
-# muc
-🔥 Most Used Commands tool
+# tsukae 🧑‍💻📊
