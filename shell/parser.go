@@ -16,7 +16,7 @@ var (
 func ParseBashHistory() []string {
 	rawHistory, err := ioutil.ReadFile(homePath + bashFile)
 	if err != nil {
-		log.Fatal("Can't open " + bashFile + " in: " + homePath)
+		log.Fatal("Can't find or open " + bashFile + " in: " + homePath)
 	}
 
 	historySlice := strings.Split(string(rawHistory), "\n")
@@ -37,7 +37,7 @@ func ParseBashHistory() []string {
 func ParseZshHistory() []string {
 	rawHistory, err := ioutil.ReadFile(homePath + zshFile)
 	if err != nil {
-		log.Fatal("Can't open " + zshFile + " in: " + homePath)
+		log.Fatal("Can't find or open " + zshFile + " in: " + homePath)
 	}
 
 	historySlice := strings.Split(string(rawHistory), "\n")

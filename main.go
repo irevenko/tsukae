@@ -1,32 +1,16 @@
 package main
 
 import (
-	s "./shell"
-	d "./draw"
+	"fmt"
+	"os"
+	c "./cmd"
 )
 
-func getShellCommandsUsage(shell string, commandsNum int) {
-	var history []string
-
-	if shell == "bash" {
-		history = s.ParseBashHistory()
-	}
-
-	if shell == "zsh" {
-		history = s.ParseZshHistory()
-	}
-
-	commands := s.CountCommands(history)
-	delete(commands, "")
-	names, occurrences := s.SortCommands(commands)
-
-	names = names[:commandsNum]
-	occurrences = occurrences[:commandsNum]
-
-	d.RenderTui(names, occurrences)
-
-}
-
 func main() {
-	getShellCommandsUsage("bash", 11)
+	c.AddCommands()
+
+	if err := c.RootCmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 }
