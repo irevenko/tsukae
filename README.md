@@ -54,6 +54,7 @@ Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
 - maybe fish, sh, etc... support
 - make proper PieChart render
 - binaries for osx, linux
+- customize TUI (colors, new charts and ways to visualize commands usage)
 
 # License 📑 
 (c) 2021 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)
