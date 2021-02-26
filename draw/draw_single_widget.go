@@ -1,7 +1,7 @@
 package draw
 
 import (
-	ui "github.com/gizak/termui"
+	ui "github.com/gizak/termui/v3"
 	"log"
 )
 

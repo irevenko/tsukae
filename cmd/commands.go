@@ -4,7 +4,7 @@ import (
 	"github.com/spf13/cobra"
 	"log"
 	"strconv"
-	d "../draw"
+	d "github.com/irevenko/tsukae/draw"
 )
 
 var (

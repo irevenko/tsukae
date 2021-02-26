@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	s "../shell"
+	s "github.com/irevenko/tsukae/shell"
 )
 
 func GetShellCommandsUsage(shell string, commandsNum int) (n []string, occ []float64) {
