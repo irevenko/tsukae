@@ -1,10 +1,11 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"log"
 	"strconv"
+
 	d "github.com/irevenko/tsukae/draw"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -14,6 +15,7 @@ var (
 var PieChartFlag bool
 var BarChartFlag bool
 var ListFlag bool
+var ShellHistPath string
 
 var Zsh = &cobra.Command{
 	Use:   "zsh",
@@ -101,6 +103,8 @@ func AddCommands() {
 	RootCmd.PersistentFlags().BoolVarP(&PieChartFlag, "piechart", "p", false, "Draw only PieChart")
 	RootCmd.PersistentFlags().BoolVarP(&BarChartFlag, "barchart", "b", false, "Draw only BarChart")
 	RootCmd.PersistentFlags().BoolVarP(&ListFlag, "list", "l", false, "Draw only List")
+
+	RootCmd.PersistentFlags().StringVarP(&ShellHistPath, "shell-path", "s", "", "Manualy specify the history file")
 
 	RootCmd.AddCommand(Zsh)
 	RootCmd.AddCommand(Bash)

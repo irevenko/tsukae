@@ -14,6 +14,7 @@
 ```-p, --piechart``` - use with ```<SHELL_NAME>``` (draws only piechart widget) <br>
 ```-b, --barchart``` - use with ```<SHELL_NAME>``` (draws only barchart widget) <br>
 ```-l, --list``` - use with ```<SHELL_NAME>``` (draws only list widget)
+```-s, --shell-path``` - use with ```<SHELL_NAME>``` Manualy provide the history file path
 
 ### Draw all widgets
 ```tsukae <SHELL_NAME>``` <br>
@@ -35,6 +36,9 @@
 ```tsukae <SHELL_NAME> 5 -b``` <br> 
 ```tsukae <SHELL_NAME> 3 -l``` 
 
+### Pass certain history file
+```tsukae <SHELL_NAME> -s=/home/me/dir/hist_file```
+
 # Contributing 🤝
 Contributions, issues and feature requests are welcome! 👍 <br>
 Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
@@ -50,7 +54,6 @@ Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
 - Drawing termui
 
 # ToDo
-- auto detect shell, manual shell path
 - maybe fish, sh, etc... support
 - make proper PieChart render
 - binaries for osx, linux
