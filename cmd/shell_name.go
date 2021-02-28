@@ -1,6 +1,9 @@
 package cmd
 
 import (
+	"log"
+	"strconv"
+
 	s "github.com/irevenko/tsukae/shell"
 )
 
@@ -17,7 +20,16 @@ func GetShellCommandsUsage(shell string, commandsNum int) (n []string, occ []flo
 
 	commands := s.CountCommands(history)
 	delete(commands, "")
+
 	names, occurrences := s.SortCommands(commands)
+
+	if len(names) < commandsNumber {
+		log.Fatal("Your history is to small! history file must contain at least " + strconv.Itoa(commandsNumber) + " unique commands")
+	}
+
+	if len(names) < commandsNum {
+		log.Fatal("Your history is to small! Can't retrive " + strconv.Itoa(commandsNum) + " commands")
+	}
 
 	names = names[:commandsNum]
 	occurrences = occurrences[:commandsNum]

@@ -53,7 +53,11 @@ func ParseZshHistory() []string {
 	for i, v := range historySlice {
 		if strings.HasPrefix(v, "sudo") {
 			commandSlice := strings.Split(v, " ")
-			historySlice[i] = commandSlice[1] //writing command name after sudo
+			if len(commandSlice) == 1 { //checking if there is only sudo command
+				historySlice[i] = ""
+			} else {
+				historySlice[i] = commandSlice[1] //writing command name after sudo
+			}
 		} else {
 			commandSlice := strings.Split(v, " ")
 			historySlice[i] = commandSlice[0] //writing command name only
