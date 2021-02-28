@@ -44,8 +44,9 @@ func ParseZshHistory() []string {
 
 	for i, v := range historySlice {
 		if strings.HasPrefix(v, ":") { //check if there is a timestamp and remove it
-			commandSlice := strings.Split(v, ";")
-			historySlice[i] = commandSlice[1]
+			if idx := strings.Index(v, ";"); idx >= 0 {
+				historySlice[i] = historySlice[i][idx+1:]
+			}
 		}
 	}
 
