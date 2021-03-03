@@ -13,7 +13,7 @@
 ### Flags 🎌
 ```-p, --piechart``` - use with ```<SHELL_NAME>``` (draws only piechart widget) <br>
 ```-b, --barchart``` - use with ```<SHELL_NAME>``` (draws only barchart widget) <br>
-```-l, --list``` - use with ```<SHELL_NAME>``` (draws only list widget)
+```-l, --list``` - use with ```<SHELL_NAME>``` (draws only list widget) <br>
 ```-s, --shell-path``` - use with ```<SHELL_NAME>``` Manualy provide the history file path
 
 ### Draw all widgets
@@ -54,10 +54,8 @@ Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
 - Drawing termui
 
 # ToDo
-- maybe fish, sh, etc... support
-- make proper PieChart render
-- binaries for osx, linux
-- customize TUI (colors, new charts and ways to visualize commands usage)
+- fish support
+- binaries for osx, linux (snap or deb etc...)
 
 # License 📑 
 (c) 2021 Ilya Revenko. [MIT License](https://tldrlegal.com/license/mit-license)

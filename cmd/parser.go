@@ -26,7 +26,7 @@ func setHistFile(histFlag string, shell string) []byte {
 	if histFilePath != "" {
 		rawHistory, err := ioutil.ReadFile(histFilePath)
 		if err != nil {
-			log.Fatal("Can't find or open " + histFilePath + "\nSpecify absolute hist file path: -m=/your_dir/your_hist_file")
+			log.Fatal("Can't find or open " + histFilePath + "\nSpecify absolute hist file path: -s=/your_dir/your_hist_file")
 		}
 		return rawHistory
 	}
@@ -34,7 +34,7 @@ func setHistFile(histFlag string, shell string) []byte {
 	if shell == "bash" {
 		rawHistory, err := ioutil.ReadFile(homePath + bashFile)
 		if err != nil {
-			log.Fatal("Can't find or open " + bashFile + " in: " + homePath + "\nSpecify absolute hist file path: -m=/your_dir/your_hist_file")
+			log.Fatal("Can't find or open " + bashFile + " in: " + homePath + "\nSpecify absolute hist file path: -s=/your_dir/your_hist_file")
 		}
 		return rawHistory
 	}
@@ -42,7 +42,7 @@ func setHistFile(histFlag string, shell string) []byte {
 	if shell == "zsh" {
 		rawHistory, err := ioutil.ReadFile(homePath + zshFile)
 		if err != nil {
-			log.Fatal("Can't find or open " + zshFile + " in: " + homePath + "\nSpecify absolute hist file path: -m=/your_dir/your_hist_file")
+			log.Fatal("Can't find or open " + zshFile + " in: " + homePath + "\nSpecify absolute hist file path: -s=/your_dir/your_hist_file")
 		}
 		return rawHistory
 	}
