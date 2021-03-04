@@ -52,7 +52,6 @@ func setHistFile(histFlag string, shell string) []byte {
 
 func ParseBashHistory() []string {
 	rawHistory := setHistFile(ShellHistPath, "bash")
-
 	historySlice := strings.Split(string(rawHistory), "\n")
 
 	for i, v := range historySlice {
@@ -63,6 +62,8 @@ func ParseBashHistory() []string {
 			} else {
 				historySlice[i] = commandSlice[1] //writing command name after sudo
 			}
+		} else if strings.HasPrefix(v, "#") { //ignore bash timestamp
+			historySlice[i] = ""
 		} else {
 			commandSlice := strings.Split(v, " ")
 			historySlice[i] = commandSlice[0] //writing command name only
@@ -74,7 +75,6 @@ func ParseBashHistory() []string {
 
 func ParseZshHistory() []string {
 	rawHistory := setHistFile(ShellHistPath, "zsh")
-
 	historySlice := strings.Split(string(rawHistory), "\n")
 
 	for i, v := range historySlice {

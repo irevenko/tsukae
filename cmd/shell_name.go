@@ -17,9 +17,11 @@ func GetShellCommandsUsage(shell string, commandsNum int) (n []string, occ []flo
 	}
 
 	commands := CountCommands(history)
-	delete(commands, "")
 
-	names, occurrences := SortCommands(commands)
+	filteredCommands := FilterBlackList(commands)
+	delete(commands, "") //remove empty lines
+
+	names, occurrences := SortCommands(filteredCommands)
 
 	if len(names) < commandsNumber {
 		log.Fatal("Your history is to small! history file must contain at least " + strconv.Itoa(commandsNumber) + " unique commands")

@@ -1,6 +1,8 @@
 package cmd
 
-import "sort"
+import (
+	"sort"
+)
 
 func CountCommands(history []string) map[string]float64 {
 	duplicate := map[string]float64{}
@@ -34,4 +36,14 @@ func SortCommands(commands map[string]float64) (names []string, occurrences []fl
 	}
 
 	return keys, values
+}
+
+func FilterBlackList(commands map[string]float64) (filteredCommands map[string]float64) {
+	blackListCommands := ParseBlackList()
+
+	for _, v := range blackListCommands {
+		delete(commands, v)
+	}
+
+	return commands
 }

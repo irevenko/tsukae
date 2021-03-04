@@ -39,6 +39,15 @@
 ### Pass certain history file
 ```tsukae <SHELL_NAME> -s=/home/me/dir/hist_file```
 
+### Ignore commands by writing the to <b>blacklist</b> file
+When you run ```tsukae``` for the first time it creates the <b>blacklist</b> file in ```$HOME/.config/tsukae``` and if you don't want some commands to appear, you can just list them in this file <br>
+Example of <i>blacklist</i> file:  <br> 
+```
+echo
+clear
+cd
+```
+
 # Contributing 🤝
 Contributions, issues and feature requests are welcome! 👍 <br>
 Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
