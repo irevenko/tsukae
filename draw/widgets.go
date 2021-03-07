@@ -2,10 +2,11 @@ package draw
 
 import (
 	"fmt"
-	ui "github.com/gizak/termui/v3"
-	"github.com/gizak/termui/v3/widgets"
 	"math"
 	"strconv"
+
+	ui "github.com/gizak/termui/v3"
+	"github.com/gizak/termui/v3/widgets"
 )
 
 func SetupHeader() *widgets.Paragraph {
@@ -34,7 +35,7 @@ func SetupPieChart(names []string, occurrences []float64, shell string, x1 int, 
 	pc.AngleOffset = .15 * math.Pi
 	pc.Data = occurrences
 	pc.LabelFormatter = func(i int, v float64) string {
-		return fmt.Sprintf("%.00f" + " %s", v, names[i])
+		return fmt.Sprintf("%.00f"+" %s", v, names[i])
 	}
 
 	return pc
@@ -63,7 +64,7 @@ func SetupBarChart(names []string, occurrences []float64, shell string, x1 int, 
 
 func SetupList(names []string, occurrences []float64, shell string, x1 int, y1 int) *widgets.List {
 	var listData []string
-	listColors := []string{"](fg:green)", "](fg:blue)","](fg:yellow)", "](fg:magenta)", "](fg:cyan)", "](fg:red)"}
+	listColors := []string{"](fg:green)", "](fg:blue)", "](fg:yellow)", "](fg:magenta)", "](fg:cyan)", "](fg:red)"}
 	j := 0
 
 	l := widgets.NewList()
@@ -74,7 +75,7 @@ func SetupList(names []string, occurrences []float64, shell string, x1 int, y1 i
 		if j > len(listColors)-1 {
 			j = 0
 		}
-		listData = append(listData, "[[" + strconv.FormatFloat(occurrences[i], 'f', 0, 64) + "] " + names[i] + listColors[j])
+		listData = append(listData, "[["+strconv.FormatFloat(occurrences[i], 'f', 0, 64)+"] "+names[i]+listColors[j])
 		j++
 	}
 	l.Rows = listData

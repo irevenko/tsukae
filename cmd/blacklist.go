@@ -15,11 +15,16 @@ const (
 func ParseBlackList() []string {
 	if _, err := os.Stat(homePath + blackListPath); err != nil {
 		if os.IsNotExist(err) {
-			blackListFile, err := os.Create(homePath + blackListPath)
+			err := os.Mkdir(homePath+"/.config/tsukae", 0755)
 			if err != nil {
-				log.Fatal("Unable to create blacklist file: ", err)
+				log.Fatal("Unable to create tsukae folder in " + homePath + "/.config")
 			}
-			defer blackListFile.Close()
+
+			blackListFile, err := os.OpenFile(homePath+blackListPath, os.O_RDONLY|os.O_CREATE, 0644)
+			if err != nil {
+				log.Fatal("Unable to create blacklist file in " + homePath + "/.config")
+			}
+			blackListFile.Close()
 
 			fmt.Println("Created blacklist file in: " + homePath + blackListPath)
 			fmt.Println("Put some commands in this file if you want to ignore them (separate each commands by new line)")

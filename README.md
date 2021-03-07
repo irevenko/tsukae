@@ -56,7 +56,7 @@ Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
 ```git clone https://github.com/irevenko/tsukae.git``` <br>
 ```cd tsukae``` <br>
 ```go get -d ./...``` <br>
-```go run main.go``` <br>
+```go build``` <br>
 
 # What I Learned 🧠
 - Parsing Text Files using Go
