@@ -8,7 +8,7 @@
 
 
 # Usage 🔬
-```<SHELL_NAME>``` - <b>zsh</b> or <b>bash</b>
+```<SHELL_NAME>``` - <b>zsh</b> or <b>bash</b> or <b>fish</b>
 
 ### Flags 🎌
 ```-p, --piechart``` - use with ```<SHELL_NAME>``` (draws only piechart widget) <br>
@@ -37,7 +37,7 @@
 ```tsukae <SHELL_NAME> 3 -l``` 
 
 ### Pass certain history file
-```tsukae <SHELL_NAME> -s=/home/me/dir/hist_file```
+```tsukae <SHELL_NAME> -s=$HOME/dir/hist_file```
 
 ### Ignore commands by writing the to <b>blacklist</b> file
 When you run ```tsukae``` for the first time it creates the <b>blacklist</b> file in ```$HOME/.config/tsukae``` and if you don't want some commands to appear, you can just list them in this file <br>
@@ -63,7 +63,6 @@ Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
 - Drawing termui
 
 # ToDo
-- fish support
 - binaries for osx, linux (snap or deb etc...)
 
 # License 📑 

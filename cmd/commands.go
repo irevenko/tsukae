@@ -99,6 +99,47 @@ var Bash = &cobra.Command{
 	},
 }
 
+var Fish = &cobra.Command{
+	Use:   "fish",
+	Short: "Visualizes the fish shell commands usage",
+	Long:  `tsukae fish <COMMANDS_NUMBER>`,
+	Args: func(cmd *cobra.Command, args []string) error {
+		if len(args) != 0 {
+			num, err := strconv.Atoi(args[0])
+			if err != nil {
+				log.Fatal("<COMMANDS_NUMBER> must be an Integer")
+			}
+
+			if num < 1 || num > 15 {
+				log.Fatal("<COMMANDS_NUMBER> must be between 1-15")
+			}
+		}
+		return nil
+	},
+	Run: func(cmd *cobra.Command, args []string) {
+		if len(args) > 0 {
+			num, _ := strconv.Atoi(args[0])
+			names, occurrences := GetShellCommandsUsage("fish", num)
+
+			hasFlag := checkForFlags(names, occurrences, num, "fish")
+			if hasFlag == true {
+				return
+			}
+
+			d.RenderTui(names, occurrences, "fish")
+		} else {
+			names, occurrences := GetShellCommandsUsage("fish", commandsNumber)
+
+			hasFlag := checkForFlags(names, occurrences, commandsNumber, "fish")
+			if hasFlag == true {
+				return
+			}
+
+			d.RenderTui(names, occurrences, "fish")
+		}
+	},
+}
+
 func AddCommands() {
 	RootCmd.PersistentFlags().BoolVarP(&PieChartFlag, "piechart", "p", false, "Draw only PieChart")
 	RootCmd.PersistentFlags().BoolVarP(&BarChartFlag, "barchart", "b", false, "Draw only BarChart")
@@ -108,6 +149,7 @@ func AddCommands() {
 
 	RootCmd.AddCommand(Zsh)
 	RootCmd.AddCommand(Bash)
+	RootCmd.AddCommand(Fish)
 }
 
 func checkForFlags(names []string, occurrences []float64, commandsNumber int, shell string) (hasFlag bool) {

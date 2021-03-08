@@ -16,6 +16,10 @@ func GetShellCommandsUsage(shell string, commandsNum int) (n []string, occ []flo
 		history = ParseZshHistory()
 	}
 
+	if shell == "fish" {
+		history = ParseFishHistory()
+	}
+
 	commands := CountCommands(history)
 
 	filteredCommands := FilterBlackList(commands)
