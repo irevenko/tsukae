@@ -6,7 +6,6 @@
 <p align="center">Built on top of <a href="https://github.com/gizak/termui">termui</a> and <a href="https://github.com/spf13/cobra">cobra</a> </p> <br>
 <p align="center">Big shoutout to <a href="https://gitlab.com/jokerj40">jokerj40</a> for suggesting this project idea (the original thought was to parse the history file) </p>
 
-
 # Usage 🔬
 ```<SHELL_NAME>``` - <b>zsh</b> or <b>bash</b> or <b>fish</b>
 
@@ -57,6 +56,9 @@ Feel free to check [open issues](https://github.com/irevenko/tsukae/issues).
 ```cd tsukae``` <br>
 ```go get -d ./...``` <br>
 ```go build``` <br>
+
+# Installation 🔨
+- <a href="https://aur.archlinux.org/packages/tsukae-git/"> AUR package </a>
 
 # What I Learned 🧠
 - Parsing Text Files using Go
