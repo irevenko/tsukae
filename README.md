@@ -45,7 +45,7 @@
 ```tsukae <SHELL_NAME> -s=$HOME/dir/hist_file```
 
 ### Ignore commands by writing the to <b>blacklist</b> file
-When you run ```tsukae``` for the first time it creates the <b>blacklist</b> file in ```$HOME/.config/tsukae``` and if you don't want some commands to appear, you can just list them in this file <br>
+When you run ```tsukae``` for the first time it creates the <b>blacklist</b> file in ```$HOME/.config/tsukae``` and ou can prevent some commands from displaying
 Example of <i>blacklist</i> file:  <br> 
 ```
 echo
