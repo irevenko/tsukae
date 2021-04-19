@@ -1,4 +1,4 @@
-# tsukae 🧑‍💻📊
+# 🐚📊 tsukae - Show off your most used shell commands 
 
 > Tsukae, 使え - means <i>use</i> in Japanese (so it refers to commands that you <i>use</i>)
 <p align="center"><img src="tsukae.gif"></p>
